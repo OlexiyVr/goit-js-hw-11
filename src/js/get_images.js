@@ -4,11 +4,11 @@ import Notiflix from 'notiflix';
 
 // Налагоджування NOTIFLIX
 Notiflix.Notify.init({
-    width: '290px',
+    width: '280px',
     opacity: 1,
     timeout: 2000,
     position: 'center-top',
-    distance: '30px',
+    distance: '40px',
 });
 
 const axios = require('axios').default;
@@ -39,7 +39,7 @@ export async function getImages(name, page = 1) {
   // додавання карток на екран
   refs.card.insertAdjacentHTML('beforeend', createMarkup(datas.hits));
 
-  // прибирання кнопки "Load more" по закінченю карток на сервері
+  // прибирання кнопки "Load more" 
   if (
     refs.card.childNodes.length + 1 > datas.totalHits &&
     datas.totalHits !== 0
@@ -60,5 +60,4 @@ export async function getImages(name, page = 1) {
     );
     return;
   }
-  // return;
 }

@@ -20,11 +20,11 @@ async function onSearch(event) {
   if (!refs.search.elements.searchQuery.value) {
     return;
   }
-  refs.search.elements[1].disabled = true; // дезактивація пошуку
+  refs.search.elements[1].disabled = true; 
   try {
     const cardImage = await getImages(refs.search.elements.searchQuery.value);
-    refs.search.elements[1].disabled = false; // активація пошуку
-    gallery.refresh(); // Метод SimpleLightbox
+    refs.search.elements[1].disabled = false; 
+    gallery.refresh(); 
     return cardImage;
   } catch (error) {
     console.log(error);
@@ -38,7 +38,7 @@ async function onLoad() {
       refs.search.elements.searchQuery.value,
       currentPage
     );
-    gallery.refresh(); // Метод SimpleLightbox
+    gallery.refresh(); 
     return addImages;
   } catch (error) {
     console.log(error);
