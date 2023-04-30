@@ -47,3 +47,13 @@ async function onLoad() {
   }
 }
 
+function scrollPage() {
+  const { height: cardHeight } = document
+    .querySelector('.photo-gallery')
+    .firstElementChild.getBoundingClientRect();
+
+  window.scrollBy({
+    top: cardHeight * 2,
+    behavior: 'smooth',
+  });
+}
