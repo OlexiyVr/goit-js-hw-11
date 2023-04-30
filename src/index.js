@@ -47,7 +47,7 @@ async function onLoad() {
 const list = document.querySelector('.scroll-container');
 list.scrollTop = 1;
 list.addEventListener('scroll', function(ev) {
-  let items = this.querySelectorAll('.item');
+  let items = this.querySelectorAll('.gallery');
   if (parseInt(this.scrollTop) == 0) {
     this.scrollTop = items[items.length - 1].clientHeight;
     this.prepend(items[items.length - 1]);
