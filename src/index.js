@@ -3,7 +3,6 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 import OnlyScroll from 'only-scrollbar';
 const scroll = new OnlyScroll(document.querySelector('.scroll-container'));
-
 import './css/styles.css';
 import refs from './js/refs';
 import { getImages } from './js/get_images';
@@ -47,24 +46,3 @@ async function onLoad() {
   }
 }
 
-function scrollPage() {
-  const { height: cardHeight } = document
-    .querySelector('.photo-gallery')
-    .firstElementChild.getBoundingClientRect();
-
-  window.scrollBy({
-    top: cardHeight * 2,
-    behavior: 'smooth',
-  });
-}
-
-function scrollPage() {
-  const { height: cardHeight } = document
-    .querySelector('.photo-gallery')
-    .firstElementChild.getBoundingClientRect();
-
-  window.scrollBy({
-    top: cardHeight * 2,
-    behavior: 'smooth',
-  });
-}
