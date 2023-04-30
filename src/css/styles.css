@@ -17,8 +17,8 @@ header {
   background: linear-gradient(
     180deg,
     #000000 10%,
-    rgba(0, 0, 0, 0.747) 70.3%,
-    rgba(0, 0, 0, 0) 100%
+    #4362b8b5 70.3%,
+    #e3ed7189 100%
   );
   position: fixed;
   display: flex;
@@ -48,7 +48,7 @@ header {
 }
 
 .photo-card:hover {
-  transform: scale(1.03);
+  transform: scale(1.5);
 }
 
 img {
@@ -79,6 +79,7 @@ a {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 button {
   cursor: pointer;
