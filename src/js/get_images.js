@@ -2,7 +2,6 @@ import refs from './refs';
 import { createMarkup } from './markup';
 import Notiflix from 'notiflix';
 import axios from 'axios';
-// Налаштування Notiflix
 Notiflix.Notify.init({
   width: '280px',
   position: 'center-top',
@@ -12,10 +11,10 @@ Notiflix.Notify.init({
 });
 
 // Ініціалізація axios
-// const axios = require('axios').default;
+
 
 const BASE_URL = 'https://pixabay.com/api/';
-const API_KEY = `35837972-e713b2afc244ad183858051af`;
+const API_KEY = '35837972-e713b2afc244ad183858051af';
 
 export async function getImages(name, page = 1) {
   const params = new URLSearchParams({
@@ -31,10 +30,9 @@ export async function getImages(name, page = 1) {
   const datas = response.data;
   refs.loadmore.hidden = false;
 
-
   if (page === 1 && datas.totalHits !== 0) {
     Notiflix.Notify.info(`Hooray! We found ${datas.totalHits} images.`);
-    refs.header.classList.add(`opac`);
+    refs.header.classList.add('opac');
   }
 
   refs.card.insertAdjacentHTML('beforeend', createMarkup(datas.hits));
