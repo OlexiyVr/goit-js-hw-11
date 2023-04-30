@@ -1,8 +1,6 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-import OnlyScroll from 'only-scrollbar';
-const scroll = new OnlyScroll(document.querySelector('.scroll-container'));
 
 import './css/styles.css';
 import refs from './js/refs';
