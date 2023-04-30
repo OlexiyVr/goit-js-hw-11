@@ -1,20 +1,21 @@
 import refs from './refs';
-import { createMarcup } from './markup';
+import { createMarkup } from './markup';
 import Notiflix from 'notiflix';
-
-// Налагоджування NOTIFLIX
+import axios from 'axios';
+// Налаштування Notiflix
 Notiflix.Notify.init({
-    width: '280px',
-    opacity: 1,
-    timeout: 2000,
-    position: 'center-top',
-    distance: '40px',
+  width: '280px',
+  position: 'center-top',
+  opacity: 1,
+  timeout: 2000,
+  distance: '40px',
 });
 
-const axios = require('axios').default;
+// Ініціалізація axios
+// const axios = require('axios').default;
 
 const BASE_URL = 'https://pixabay.com/api/';
-const API_KEY = '35837972-e713b2afc244ad183858051af';
+const API_KEY = `35837972-e713b2afc244ad183858051af`;
 
 export async function getImages(name, page = 1) {
   const params = new URLSearchParams({
@@ -30,16 +31,14 @@ export async function getImages(name, page = 1) {
   const datas = response.data;
   refs.loadmore.hidden = false;
 
-  // повідомлення про кількість знайдених зображень
+
   if (page === 1 && datas.totalHits !== 0) {
     Notiflix.Notify.info(`Hooray! We found ${datas.totalHits} images.`);
-    refs.header.classList.add('opac');
+    refs.header.classList.add(`opac`);
   }
 
-  // додавання карток на екран
   refs.card.insertAdjacentHTML('beforeend', createMarkup(datas.hits));
 
-  // прибирання кнопки "Load more" 
   if (
     refs.card.childNodes.length + 1 > datas.totalHits &&
     datas.totalHits !== 0
@@ -51,13 +50,12 @@ export async function getImages(name, page = 1) {
     );
   }
 
-  // перевірка за пошуком, який відсутній на сервері
   if (!datas.hits.length) {
     refs.loadmore.hidden = true;
     refs.header.classList.remove('opac');
     Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
-    return;
+    return datas;
   }
 }
