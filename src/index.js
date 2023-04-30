@@ -1,6 +1,9 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+import OnlyScroll from 'only-scrollbar';
+
+
 import './css/styles.css';
 import refs from './js/refs';
 import { getImages } from './js/get_images';
