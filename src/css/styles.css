@@ -16,9 +16,9 @@ header {
   backdrop-filter: blur(0.8px);
   background: linear-gradient(
     180deg,
-    #000000 10%,
-    #4362b8b5 70.3%,
-    #e3ed7189 100%
+    #b5a4a4 10%,
+    #1b2df9de 70.3%,
+    #e4cf0fd5 100%
   );
   position: fixed;
   display: flex;
@@ -48,7 +48,7 @@ header {
 }
 
 .photo-card:hover {
-  transform: scale(1.5);
+  transform: scale(1.05);
 }
 
 img {
