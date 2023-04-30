@@ -10,9 +10,6 @@ Notiflix.Notify.init({
   distance: '40px',
 });
 
-// Ініціалізація axios
-
-
 const BASE_URL = 'https://pixabay.com/api/';
 const API_KEY = '35837972-e713b2afc244ad183858051af';
 
