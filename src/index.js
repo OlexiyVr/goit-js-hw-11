@@ -47,3 +47,15 @@ async function onLoad() {
   }
 }
 
+window.addEventListener('scroll', scrollFunction);
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    refs.btnUpWrapper.style.display = 'flex';
+  } else {
+    refs.btnUpWrapper.style.display = 'none';
+  }
+}
+refs.btnUp.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
