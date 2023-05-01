@@ -2,8 +2,6 @@ import refs from './refs';
 import { createMarkup } from './markup';
 import Notiflix from 'notiflix';
 import axios from 'axios';
-
-
 Notiflix.Notify.init({
   width: '280px',
   position: 'center-top',
@@ -11,10 +9,10 @@ Notiflix.Notify.init({
   timeout: 2000,
   distance: '40px',
 });
-
 const BASE_URL = 'https://pixabay.com/api/';
 const API_KEY = '35837972-e713b2afc244ad183858051af';
-
+let currentPage = 1;
+let currentQuery = '';
 export async function getImages(name) {
   if (currentQuery !== name) {
     currentPage = 1;

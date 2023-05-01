@@ -1,3 +1,4 @@
+import refs from "./refs";
 export async function onLoad() {
   currentPage += 1;
   try {
