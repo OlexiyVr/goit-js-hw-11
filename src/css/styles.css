@@ -82,6 +82,13 @@ a {
   flex-wrap: wrap;
   justify-content: center;
 }
-button {
+
+.load-more{
   cursor: pointer;
+  font-size: 24px;
+  padding: 3px;
+  background-color: #2d18a4;
+  color: #eeee11;
+  border-radius: 2px;
+  border: 0.5px solid #eeee11;
 }
