@@ -1,4 +1,7 @@
 import refs from "./refs";
+import { getImages } from "./get_images";
+import simpleLightbox from "simplelightbox";
+import { currentPage } from "./get_images";
 export async function onLoad() {
   currentPage += 1;
   try {
