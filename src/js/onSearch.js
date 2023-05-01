@@ -1,3 +1,4 @@
+import refs from "./refs";
 export async function onSearch(event) {
   event.preventDefault();
   refs.card.innerHTML = ``;
