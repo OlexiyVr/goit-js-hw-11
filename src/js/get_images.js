@@ -11,8 +11,8 @@ Notiflix.Notify.init({
 });
 const BASE_URL = 'https://pixabay.com/api/';
 const API_KEY = '35837972-e713b2afc244ad183858051af';
-export let currentPage = 1;
-export let currentQuery = '';
+ let currentPage = 1;
+ let currentQuery = '';
 export async function getImages(name) {
   if (currentQuery !== name) {
     currentPage = 1;
