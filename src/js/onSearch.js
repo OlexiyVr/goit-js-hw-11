@@ -1,6 +1,7 @@
 import refs from "./refs";
 import { getImages } from "./get_images";
 import simpleLightbox from "simplelightbox";
+
 export async function onSearch(event) {
   event.preventDefault();
   refs.card.innerHTML = ``;
